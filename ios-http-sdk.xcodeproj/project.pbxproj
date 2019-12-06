@@ -3,11 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		8431887752087930CF92B67E /* Pods_ios_http_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 259A58B496FFB63C5C818267 /* Pods_ios_http_sdk.framework */; };
+		C4C1289F2399F7E100F682EB /* Crypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C1289E2399F7E100F682EB /* Crypt.swift */; };
+		C4C128A22399F91500F682EB /* JWT.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C128A12399F91500F682EB /* JWT.swift */; };
+		C4C128A62399FA2600F682EB /* Jwt.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C128A42399FA2600F682EB /* Jwt.m */; };
+		C4C128A92399FA6500F682EB /* Algorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C128A82399FA6400F682EB /* Algorithm.m */; };
 		FC9DA6B32399F01300D726EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9DA6B22399F01300D726EC /* AppDelegate.swift */; };
 		FC9DA6B52399F01300D726EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9DA6B42399F01300D726EC /* SceneDelegate.swift */; };
 		FC9DA6B72399F01300D726EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9DA6B62399F01300D726EC /* ViewController.swift */; };
@@ -20,6 +24,13 @@
 		259A58B496FFB63C5C818267 /* Pods_ios_http_sdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_http_sdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		518A1C81D066279624B4C1C2 /* Pods-ios-http-sdk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-http-sdk.release.xcconfig"; path = "Target Support Files/Pods-ios-http-sdk/Pods-ios-http-sdk.release.xcconfig"; sourceTree = "<group>"; };
 		BA7F87037B3F80D6C680B119 /* Pods-ios-http-sdk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-http-sdk.debug.xcconfig"; path = "Target Support Files/Pods-ios-http-sdk/Pods-ios-http-sdk.debug.xcconfig"; sourceTree = "<group>"; };
+		C4C1289E2399F7E100F682EB /* Crypt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crypt.swift; sourceTree = "<group>"; };
+		C4C128A12399F91500F682EB /* JWT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWT.swift; sourceTree = "<group>"; };
+		C4C128A32399FA2600F682EB /* ios-http-sdk-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ios-http-sdk-Bridging-Header.h"; sourceTree = "<group>"; };
+		C4C128A42399FA2600F682EB /* Jwt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Jwt.m; sourceTree = "<group>"; };
+		C4C128A52399FA2600F682EB /* Jwt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Jwt.h; sourceTree = "<group>"; };
+		C4C128A72399FA6400F682EB /* Algorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Algorithm.h; sourceTree = "<group>"; };
+		C4C128A82399FA6400F682EB /* Algorithm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Algorithm.m; sourceTree = "<group>"; };
 		FC9DA6AF2399F01300D726EC /* ios-http-sdk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-http-sdk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC9DA6B22399F01300D726EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC9DA6B42399F01300D726EC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,7 +59,6 @@
 				BA7F87037B3F80D6C680B119 /* Pods-ios-http-sdk.debug.xcconfig */,
 				518A1C81D066279624B4C1C2 /* Pods-ios-http-sdk.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -58,6 +68,20 @@
 				259A58B496FFB63C5C818267 /* Pods_ios_http_sdk.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C4C128A02399F84300F682EB /* Cryptography */ = {
+			isa = PBXGroup;
+			children = (
+				C4C128A72399FA6400F682EB /* Algorithm.h */,
+				C4C128A82399FA6400F682EB /* Algorithm.m */,
+				C4C128A52399FA2600F682EB /* Jwt.h */,
+				C4C128A42399FA2600F682EB /* Jwt.m */,
+				C4C1289E2399F7E100F682EB /* Crypt.swift */,
+				C4C128A12399F91500F682EB /* JWT.swift */,
+				C4C128A32399FA2600F682EB /* ios-http-sdk-Bridging-Header.h */,
+			);
+			path = Cryptography;
 			sourceTree = "<group>";
 		};
 		FC9DA6A62399F01300D726EC = {
@@ -81,6 +105,7 @@
 		FC9DA6B12399F01300D726EC /* ios-http-sdk */ = {
 			isa = PBXGroup;
 			children = (
+				C4C128A02399F84300F682EB /* Cryptography */,
 				FC9DA6B22399F01300D726EC /* AppDelegate.swift */,
 				FC9DA6B42399F01300D726EC /* SceneDelegate.swift */,
 				FC9DA6B62399F01300D726EC /* ViewController.swift */,
@@ -126,6 +151,7 @@
 				TargetAttributes = {
 					FC9DA6AE2399F01300D726EC = {
 						CreatedOnToolsVersion = 11.2.1;
+						LastSwiftMigration = 1120;
 					};
 				};
 			};
@@ -207,9 +233,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4C128A22399F91500F682EB /* JWT.swift in Sources */,
+				C4C1289F2399F7E100F682EB /* Crypt.swift in Sources */,
 				FC9DA6B72399F01300D726EC /* ViewController.swift in Sources */,
+				C4C128A62399FA2600F682EB /* Jwt.m in Sources */,
 				FC9DA6B32399F01300D726EC /* AppDelegate.swift in Sources */,
 				FC9DA6B52399F01300D726EC /* SceneDelegate.swift in Sources */,
+				C4C128A92399FA6500F682EB /* Algorithm.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +384,7 @@
 			baseConfigurationReference = BA7F87037B3F80D6C680B119 /* Pods-ios-http-sdk.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LCN239U73A;
 				INFOPLIST_FILE = "ios-http-sdk/Info.plist";
@@ -363,6 +394,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sam.ios-http-sdk";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ios-http-sdk/Cryptography/ios-http-sdk-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -373,6 +406,7 @@
 			baseConfigurationReference = 518A1C81D066279624B4C1C2 /* Pods-ios-http-sdk.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LCN239U73A;
 				INFOPLIST_FILE = "ios-http-sdk/Info.plist";
@@ -382,6 +416,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sam.ios-http-sdk";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ios-http-sdk/Cryptography/ios-http-sdk-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
