@@ -18,6 +18,9 @@
 		FC9DA6BA2399F01300D726EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC9DA6B82399F01300D726EC /* Main.storyboard */; };
 		FC9DA6BC2399F01600D726EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC9DA6BB2399F01600D726EC /* Assets.xcassets */; };
 		FC9DA6BF2399F01600D726EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC9DA6BD2399F01600D726EC /* LaunchScreen.storyboard */; };
+		FC9DA6CD2399F5F300D726EC /* HttpHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9DA6C72399F5F300D726EC /* HttpHeader.swift */; };
+		FC9DA6CE2399F5F300D726EC /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9DA6C82399F5F300D726EC /* HttpRequest.swift */; };
+		FCD918472399F96100EBBE63 /* CredentialKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD918462399F96100EBBE63 /* CredentialKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +42,9 @@
 		FC9DA6BB2399F01600D726EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC9DA6BE2399F01600D726EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC9DA6C02399F01600D726EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC9DA6C72399F5F300D726EC /* HttpHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpHeader.swift; sourceTree = "<group>"; };
+		FC9DA6C82399F5F300D726EC /* HttpRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
+		FCD918462399F96100EBBE63 /* CredentialKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CredentialKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,14 +113,25 @@
 			children = (
 				C4C128A02399F84300F682EB /* Cryptography */,
 				FC9DA6B22399F01300D726EC /* AppDelegate.swift */,
+				FC9DA6C82399F5F300D726EC /* HttpRequest.swift */,
+				FC9DA6C72399F5F300D726EC /* HttpHeader.swift */,
+				FCD918462399F96100EBBE63 /* CredentialKey.swift */,
 				FC9DA6B42399F01300D726EC /* SceneDelegate.swift */,
 				FC9DA6B62399F01300D726EC /* ViewController.swift */,
-				FC9DA6B82399F01300D726EC /* Main.storyboard */,
-				FC9DA6BB2399F01600D726EC /* Assets.xcassets */,
-				FC9DA6BD2399F01600D726EC /* LaunchScreen.storyboard */,
+				FC9DA6D32399F62B00D726EC /* SupportingFile */,
 				FC9DA6C02399F01600D726EC /* Info.plist */,
 			);
 			path = "ios-http-sdk";
+			sourceTree = "<group>";
+		};
+		FC9DA6D32399F62B00D726EC /* SupportingFile */ = {
+			isa = PBXGroup;
+			children = (
+				FC9DA6B82399F01300D726EC /* Main.storyboard */,
+				FC9DA6BB2399F01600D726EC /* Assets.xcassets */,
+				FC9DA6BD2399F01600D726EC /* LaunchScreen.storyboard */,
+			);
+			path = SupportingFile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,10 +253,18 @@
 				C4C128A22399F91500F682EB /* JWT.swift in Sources */,
 				C4C1289F2399F7E100F682EB /* Crypt.swift in Sources */,
 				FC9DA6B72399F01300D726EC /* ViewController.swift in Sources */,
+<<<<<<< HEAD
 				C4C128A62399FA2600F682EB /* Jwt.m in Sources */,
 				FC9DA6B32399F01300D726EC /* AppDelegate.swift in Sources */,
 				FC9DA6B52399F01300D726EC /* SceneDelegate.swift in Sources */,
 				C4C128A92399FA6500F682EB /* Algorithm.m in Sources */,
+=======
+				FC9DA6CD2399F5F300D726EC /* HttpHeader.swift in Sources */,
+				FC9DA6B32399F01300D726EC /* AppDelegate.swift in Sources */,
+				FC9DA6B52399F01300D726EC /* SceneDelegate.swift in Sources */,
+				FCD918472399F96100EBBE63 /* CredentialKey.swift in Sources */,
+				FC9DA6CE2399F5F300D726EC /* HttpRequest.swift in Sources */,
+>>>>>>> 43b061b64299d347f73c47d07f1d4d492356eb31
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
