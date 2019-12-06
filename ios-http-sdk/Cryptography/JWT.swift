@@ -14,11 +14,11 @@ class JWT {
     
     static func getJWT(_ hash : String, deviceID : String, key : String) -> String {
         
-        let bodyJWT: [String: AnyObject] =
+        let bodyJWT: [String: String] =
             [
-                "hash": hash as AnyObject,
-                "deviceId": deviceID as AnyObject,
-                "appVersion":TrueAccessDevice.getAppVersion() as AnyObject
+                "hash": hash,
+                "deviceId": deviceID,
+                "appVersion": TrueHeader.appVersion
         ]
         let encodeJWT = try! Jwt.encode(withPayload: bodyJWT, andKey: key, andAlgorithm: HS256)
         
@@ -27,10 +27,10 @@ class JWT {
     
     static func getJWT( _ deviceID : String, key : String) -> String {
         
-        let bodyJWT: [String: AnyObject] =
+        let bodyJWT: [String: String] =
             [
-                "deviceId": deviceID as AnyObject,
-                "appVersion":TrueAccessDevice.getAppVersion() as AnyObject
+                "deviceId": deviceID ,
+                "appVersion": TrueHeader.appVersion
         ]
         let encodeJWT = try! Jwt.encode(withPayload: bodyJWT, andKey: key, andAlgorithm: HS256)
         return encodeJWT
@@ -65,7 +65,7 @@ class JWT {
             
         }else{
            print("Decoding failure: Signature verification failed")
-            let key = TrueSecurity.getFingerPrint()
+            let key = TrueHeader.cryptoKey?.secretKey
             
             if let decode = try? Jwt.decode(withToken: jwt, andKey: key, andVerify: true){
                 //             TrueLog.printLog(logContent:"JWT Decode String : \(decode)")

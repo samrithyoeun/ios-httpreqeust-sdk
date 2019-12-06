@@ -27,10 +27,10 @@ class TrueHeader {
     public static var accessToken = ""
     public static var refreshToken = ""
     public static var uuid: String = ""
-    public static var cryptoKey: CryptoKey?
+    public static var cryptoKey: CryptoKey!
     
     public static var publicKey = ""
-    private static var appVersion = ""
+    public static var appVersion = ""
     private static var channelId = 0
     
     static func initialize(credential: CredentialKey,
