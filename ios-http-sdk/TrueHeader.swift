@@ -51,7 +51,7 @@ class TrueHeader {
         
     }
     
-    static func getApiAuthorization() -> [String: Any] {
+    static func getApiAuthorization() -> [String: String] {
         let key = TrueHeader.shared.getKey()
         var param = TrueHeader.getDefaultHeader()
         
@@ -60,7 +60,7 @@ class TrueHeader {
     }
     
     
-    static func getApiAccessToken() -> [String: Any] {
+    static func getApiAccessToken() -> [String: String] {
         let key = TrueHeader.shared.getKey()
         var param = TrueHeader.getDefaultHeader()
         
@@ -68,16 +68,16 @@ class TrueHeader {
         return param
     }
     
-    class func getDefaultHeader() -> [String: Any] {
+    class func getDefaultHeader() -> [String: String] {
         
-        var param = [String: Any]()
+        var param = [String: String]()
         let key = TrueHeader.shared.getKey()
 
         param["client_id"] = key.clientId
         param["client_secret"] = key.clientSecret
         param["content-type"] = "application/json;charset=utf-8"
         param["app_version"] = TrueHeader.appVersion
-        param["channel_id"] = TrueHeader.channelId
+        param["channel_id"] = "\(TrueHeader.channelId)"
         param["device_unique_reference"] = "iOS.\(TrueHeader.uuid)"
         
         return param

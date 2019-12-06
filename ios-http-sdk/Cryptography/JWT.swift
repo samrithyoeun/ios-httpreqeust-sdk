@@ -68,7 +68,7 @@ class JWT {
             let key = TrueHeader.cryptoKey?.secretKey
             
             if let decode = try? Jwt.decode(withToken: jwt, andKey: key, andVerify: true){
-                //             TrueLog.printLog(logContent:"JWT Decode String : \(decode)")
+                //             print("JWT Decode String : \(decode)")
                 do {
                     //                let obj = ["bad input" : NSDate()]
                     if JSONSerialization.isValidJSONObject(decode) {
