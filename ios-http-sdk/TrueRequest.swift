@@ -101,7 +101,8 @@ class TrueRequest {
         
         let url = TrueRequest.apiPath + endPoint
         
-        Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding(), headers: headers)
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: CustomEncoding()
+            , headers: headers)
             .validate()
             .responseString(encoding: .utf8) { (response: DataResponse<String>) in
                 handle(response: response, responseCode: response.response?.statusCode, callback: callback)
@@ -179,5 +180,14 @@ class TrueRequest {
     }
 }
 
+struct CustomEncoding: ParameterEncoding {
+    func encode(_ urlRequest: URLRequestConvertible, with parameters: Parameters?) throws -> URLRequest {
+        var request = try! URLEncoding().encode(urlRequest, with: parameters)
+        let urlString = request.url?.absoluteString.replacingOccurrences(of: "%5B%5D=", with: "=")
+        print("*** param \(parameters)")
+        request.url = URL(string: urlString!)
+        return request
+    }
+}
 
 
